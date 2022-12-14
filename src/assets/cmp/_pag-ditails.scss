@@ -1,0 +1,41 @@
+.pag-details {
+    background-color: #e5e5e591;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+position: relative;
+    @include for-medium-layout {
+        width: 70%;
+
+    }
+
+    & .tests {
+        text-align: center;
+
+        h3 {
+            text-decoration: underline;
+        }
+
+        & .test {
+
+            &>* {
+                padding: 2px;
+            }
+        }
+    }
+
+    h1,
+    h2 {
+        margin: 3px;
+    }
+    & .add-test-button{
+        button{
+            width: 70px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+    }
+
+}

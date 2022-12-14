@@ -1,0 +1,105 @@
+.login-container {
+    align-items: center;
+    background-color: #fbfbfb;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0 15px;
+    position: relative;
+    gap: 15px;
+
+    & .logout {
+        margin-top: 100px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 0 0 4px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        // margin-bottom: 20px;
+        // max-width: 350px;
+        // min-width: 350px;
+        // padding: 25px 40px;
+        height: 400px;
+        width: 300px;
+        text-align: center;
+        flex-direction: column;
+        gap: 150px;
+
+        & .button-container {
+            width: 100%;
+
+            & .no {
+                background-color: rgba(0, 128, 0, 0.656);
+                &:hover{
+                    background-color: rgba(0, 128, 0, 0.402);
+
+                }
+            }
+
+            & .yes {
+                background-color: rgba(255, 0, 0, 0.686);
+                &:hover{
+                    background-color: rgba(255, 0, 0, 0.42);
+
+                }
+            }
+
+            button {
+                width: 85%;
+                margin-top: 15px;
+            }
+        }
+    }
+
+    & .login {
+        background:  linear-gradient(110deg, rgba(161, 99, 167, 0.8117647059) 39%, rgba(62, 114, 148, 0.8039215686) 73%);
+
+        margin-top: 100px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 0 0 4px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        // margin-bottom: 20px;
+        // max-width: 350px;
+        // min-width: 350px;
+        // padding: 25px 40px;
+        height: 400px;
+        width: 300px;
+        flex-direction: column;
+
+        & .title {
+            margin-top: 15px;
+        }
+
+        form {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+
+            & .button {
+                background-color: #2b75a6;
+                margin-top: 30px;
+                height: 40px;
+
+                &:hover {
+                    background-color: #256189;
+
+                }
+            }
+            & .message{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-weight: 700;
+                color: palevioletred;
+                gap: 10px;
+            }
+        }
+    }
+
+}

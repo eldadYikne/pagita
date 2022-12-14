@@ -1,0 +1,38 @@
+.pag-preview {
+    height: 50px;
+    background-color: $color5;
+    border-radius: 3px;
+    color: #ffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+
+ 
+
+    &:hover {
+        background-color: #57477bb3;
+    }
+
+    & .material-icons {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    & .parent-name {
+
+        text-align: right;
+        width: 190px;
+        display: flex;
+        justify-content: space-between;
+        & .id {
+       
+        }
+        & :first-child {}
+    }
+}

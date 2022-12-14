@@ -1,0 +1,39 @@
+.add-pag {
+    background-color: #e5e5e591;
+    width: 70%;
+
+    @include for-mobile-only {
+        position: absolute;
+        width: 100%;
+        background-color: white;
+        top: 10px;
+
+    }
+
+    form {
+
+        display: flex;
+        flex-direction: column;
+
+        & .MuiTextField-root {
+            margin: 5px;
+
+        }
+    }
+
+    & .buttons-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 5px 0 5px;
+
+        button {
+
+            @include for-mobile-only {
+                margin-top: 10px;
+                width: 48%;
+                height: 50px;
+
+            }
+        }
+    }
+}

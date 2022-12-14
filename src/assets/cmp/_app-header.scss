@@ -1,0 +1,153 @@
+.app-header {
+    & .menu {
+        position: absolute;
+        right: 0;
+        padding: 10px;
+
+        @include for-medium-layout {
+            display: none;
+        }
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    @include for-medium-layout {
+        justify-content: space-between;
+        max-height: 75px;
+        background: linear-gradient(110deg, rgba(161, 99, 167, 0.8117647059) 39%, rgba(62, 114, 148, 0.8039215686) 73%);
+        flex-direction: row;
+    }
+
+    & .background {
+        height: 100vh;
+        position: absolute;
+        background-color: black;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        z-index: 20;
+        background-color: #00000091;
+
+        @include for-medium-layout {
+            display: none;
+        }
+    }
+
+    & .logo {
+        img {
+            padding: 10px;
+            height: 61px;
+            display: none;
+
+        }
+
+        @include for-medium-layout {
+            img {
+                display: block;
+            }
+        }
+    }
+
+    .nav-bar {
+        height: 75px;
+        background-color: #e8e4e4;
+        display: flex;
+        flex-direction: row;
+
+        @include for-mobile-only {
+            background-color: #f4f5f7;
+            border: 1px solid #d3d3d3;
+            border-radius: 3px;
+            border-top-right-radius: 0;
+            box-shadow: 0 12px 24px -6px #091e4240, 0 0 0 1px #091e4214;
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 52px);
+            position: fixed;
+            right: 0;
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+            transition: all .5s;
+            width: 50%;
+            z-index: 30;
+            height: 100vh;
+            background-color : #70488c;
+            &.open {
+                transform: translateX(0);
+            }
+        }
+
+        @include for-mobile-only {
+            position: absolute;
+            right: 0;
+        }
+
+        @include for-medium-layout {
+            img {
+                display: block;
+            }
+        }
+
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        & .login {
+            display: flex;
+            align-items: center;
+            background-color: $color4;
+            justify-content: center;
+            font-size: 16px;
+            font-family: Yehuda;
+            color: #e8e4e4;
+            height: 100px;
+
+            @include for-medium-layout {
+                width: 150px;
+                height: 100%;
+
+            }
+
+            h4 {
+                padding-right: 10px;
+            }
+
+            &.information {
+                background-color: $color3;
+
+                &:hover {
+                    background-color: #5b91b6;
+
+                }
+            }
+
+            &.personal-navbar {
+                background-color: $color6;
+
+                &:hover {
+                    background-color: #273557e1;
+
+                }
+            }
+
+            &.pagita {
+                background-color: $color5;
+
+                &:hover {
+                    background-color: #57477be0;
+                    ;
+
+                }
+            }
+
+            &:hover {
+                background-color: #c278c9;
+
+            }
+        }
+    }
+}

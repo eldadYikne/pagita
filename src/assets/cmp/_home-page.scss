@@ -1,0 +1,71 @@
+.home {
+
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    img {
+        width: 100vw;
+        height: 50%;
+        max-height: 400px;
+    }
+
+    & .title {
+        text-align: center;
+        height: 70px;
+        background-color: #a163a7;
+        display: flex;
+        place-content: flex-end;
+        align-items: center;
+        border-radius: 39px;
+        position: absolute;
+        bottom: 92%;
+        right: 20%;
+        justify-content: center;
+        padding: 10px;
+        width: 76%;
+        right: 9%;
+
+        @include for-medium-layout {
+            width: 60%;
+
+        }
+
+        h1 {
+            color: $color0;
+            font-family: Yehuda;
+        }
+    }
+
+    .home-page {
+        height: 50%;
+
+
+        & .p1 {
+            background-color: #e8e4e4;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            position: relative;
+            height: 100%;
+
+            & .great1 {
+                text-align: center;
+                h2{
+                    text-align: center;
+                }
+            }
+
+            & .great {
+                margin-top: 60px;
+            }
+
+            h2 {
+                margin: 0;
+                margin-top: 40px;
+            }
+        }
+    }
+}

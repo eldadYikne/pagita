@@ -1,0 +1,21 @@
+// SETUP
+@import './setup/variables';
+@import './setup/mixin';
+
+// BASICS
+@import './basics/bace';
+@import './basics/helpers';
+@import './basics/layout';
+
+// CMP
+@import './cmp/home-page';
+@import './cmp/app-header';
+@import './cmp/login';
+@import './cmp/pagita';
+@import './cmp/pags-list';
+@import './cmp/pag-preview';
+@import './cmp/pag-ditails';
+@import './cmp/add-pag';
+@import './cmp/informetion';
+@import './cmp/personal';
+// VIEWES
