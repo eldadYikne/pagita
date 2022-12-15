@@ -8,7 +8,7 @@
 
     & .great {
         padding-right: 20px;
-        padding-top: 10px;
+        padding-top: 25px;
 
         @include for-mobile-only {
             margin-top: 40px;
@@ -24,26 +24,34 @@
         display: flex;
         text-align: right;
         display: flex;
-        flex-direction: column ;
+        flex-direction: column;
+
         @include for-medium-layout {
-            flex-direction: row ;
+            flex-direction: row;
 
         }
-      
+
 
         & .important-facts {
             width: 300px;
             height: 300px;
-            box-shadow: 0px 0px 4px;
+            box-shadow: -1px 0px 8px 2px #fff;
             font-size: 20px;
             font-weight: 600;
-         margin-left: 100px;
-            @include for-mobile-only{
+            margin-left: 100px;
+
+            @include for-mobile-only {
                 width: 90vw;
                 margin-left: 0;
                 margin: auto;
-
+                margin-bottom: 30px;
+                height: 180px;
+                overflow: auto;
+                h2{
+                    margin: 0;
                 }
+            }
+
             h2 {
                 padding: 10px;
 
@@ -70,8 +78,14 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    width: 600px;
+    width: 80%;
+    text-align: center;
     box-shadow: 0px 2px 5px;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 70px;
+
+    @include for-medium-layout {
+        width: 600px;
+
+    }
 }

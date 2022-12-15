@@ -1,5 +1,5 @@
 import { httpService } from "./httpService"
-import { storageService } from "./storage.service"
+import { storageLoaclService } from "./storage.service"
 
 const STORAGE_KEY = 'user'
 const STORAGE_KEY_LOGGEDIN = 'loggedinUser'
@@ -30,7 +30,7 @@ function login(credentials) {
             return user
         }
     })
-    storageService.saveToStorage(STORAGE_KEY_LOGGEDIN,user)
+    storageLoaclService.saveToStorage(STORAGE_KEY_LOGGEDIN,user)
     console.log('user', user)
     if (user) {
         return Promise.resolve(user)
@@ -77,7 +77,7 @@ function logout() {
 }
 
 function getLoggedinUser() {
-return storageService.loadFromStorage(STORAGE_KEY_LOGGEDIN)
+return storageLoaclService.loadFromStorage(STORAGE_KEY_LOGGEDIN)
     // return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN)) || null
 }
 

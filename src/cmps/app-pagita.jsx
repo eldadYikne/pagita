@@ -1,6 +1,5 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Outlet } from "react-router-dom"
 import { loadPags, savePag } from "../store/actions/pagita.action"
 import { PagsList } from "./pags-list"
 export function PagitaApp() {
@@ -10,7 +9,6 @@ export function PagitaApp() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-
         dispatch(loadPags())
 
     }, [])
@@ -23,17 +21,16 @@ export function PagitaApp() {
         const bornDate = ev.target[6].value
         const id = ev.target[8].value
         const tel = ev.target[10].value
-      
-        const newPag = { gender, parentsName, weight, bornDate,id ,tel}
+
+        const newPag = { gender, parentsName, weight, bornDate, id, tel }
         dispatch(savePag(newPag))
     }
 
-  
+
 
     console.log('pags', pags)
     return <div className="pagita">
-
-        <PagsList  addPag={addPag} pags={pags} />
+        <PagsList addPag={addPag} pags={pags} />
 
     </div>
 }

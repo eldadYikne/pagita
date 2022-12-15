@@ -57,7 +57,7 @@ function remove(pagId) {
 
 function save(pag) {
   if (pag._id) {
-    return storageService.put(BASE_URL + pag._id, pag).then((res) => res)
+    return storageService.put(BASE_URL, pag).then((res) => res)
   } else {
     
     return storageService.post(BASE_URL, pag).then((res) => res)

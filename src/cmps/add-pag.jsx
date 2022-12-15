@@ -53,7 +53,6 @@ export function AddPag({ addPag, setIsAddPag }) {
                         elInput.classList.remove('red')
 
                     }
-
                 }
             })
         }
@@ -67,6 +66,7 @@ export function AddPag({ addPag, setIsAddPag }) {
     });
 
     return <div className="add-pag" dir="rtl">
+        <h2 className="title">הוספת תינוק</h2>
         <form onSubmit={cheackInputs} onChange={onChangeHandel}  >
             <CacheProvider value={cacheRtl}>
                 <ThemeProvider theme={theme}>

@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { pagitaService } from "../services/pagita.service"
+import { AddTest } from "./add-test"
+import KeyboardTabIcon from '@mui/icons-material/KeyboardTab';
 export function PagDetails() {
     const params = useParams()
     const [pag, setPag] = useState()
+    const [isAddTest, setIsAddTest] = useState(false)
     const dispatch = useDispatch()
     useEffect(() => {
         loadPag()
-    }, [params])
+    }, [params.pagId])
 
     const loadPag = async () => {
         const id = params.pagId
@@ -20,12 +23,12 @@ export function PagDetails() {
 
         }
     }
+
     const convertBornTime = (time) => {
 
         const currTime = time.split('')
         const TchartIdx = currTime.findIndex(chart => chart === 'T')
         currTime.splice(TchartIdx, 1, ' ')
-
         return currTime.join('')
     }
 
@@ -59,7 +62,13 @@ export function PagDetails() {
         </div>
 
         <div className="add-test-button">
-            <button>הוסף </button>
+            <button onClick={() => setIsAddTest(true)}>הוסף </button>
+            <span>
+                <Link to='/pagita'>
+                    <KeyboardTabIcon fontSize={'large'} />
+                </Link>
+            </span>
         </div>
+        {isAddTest && <AddTest setIsAddTest={setIsAddTest} pag={pag} />}
     </div>
 }

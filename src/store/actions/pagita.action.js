@@ -55,8 +55,14 @@ export function removePagFromState() {
 export function savePag(pag) {
     return async (dispatch) => {
         try {
+            console.log('pag',pag)
             const newPag = await pagitaService.save(pag)
-            dispatch({ type: 'ADD_PAG', pag: newPag })
+            if(!pag._id){
+                dispatch({ type: 'ADD_PAG', pag: newPag })
+            }else{
+                dispatch({ type: 'UPDATE_PAG', pag: newPag })
+
+            }
 
         } catch (err) {
             console.log("Can't save baby ")
@@ -65,10 +71,3 @@ export function savePag(pag) {
 }
 
 
-
-// export function updateToy(toy) {
-//     return (dispatch)=>{
-//         toyService.save({ ...toy })
-//         .then()
-//     }
-// }

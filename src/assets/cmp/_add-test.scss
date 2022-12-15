@@ -1,0 +1,19 @@
+.add-test{
+    display: flex;
+    flex-direction: column;
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        & .button-container{
+            display: flex;
+            justify-content: space-between;
+
+        }
+        width: 100%;
+
+        & .test-date{
+            margin-top: 15px;
+        }
+    }
+}

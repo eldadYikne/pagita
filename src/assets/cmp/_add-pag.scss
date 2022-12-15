@@ -2,6 +2,14 @@
     background-color: #e5e5e591;
     width: 70%;
 
+    & .title {
+        color: $color5;
+        padding-right: 10px;
+        @include for-medium-layout {
+            display: none;
+        }
+    }
+
     @include for-mobile-only {
         position: absolute;
         width: 100%;

@@ -1,3 +1,4 @@
+import { storageLoaclService } from "./storage.service"
 
 export const storageService = {
     query,
@@ -11,8 +12,7 @@ export const storageService = {
 
 
 function query(entityType, filterBy, delay = 0) {
-
-    var entities = JSON.parse(localStorage.getItem(entityType)) 
+    var entities = storageLoaclService.loadFromStorage(entityType)
  console.log('entities',entities)
  
     return new Promise((resolve, reject) => {
@@ -50,7 +50,9 @@ function post(entityType, newEntity) {
 function put(entityType, updatedEntity) {
     return query(entityType)
         .then(entities => {
+            console.log('entities',entities)
             const idx = entities.findIndex(entity => entity._id === updatedEntity._id)
+            console.log(idx);
             entities.splice(idx, 1, updatedEntity)
             _save(entityType, entities)
             return updatedEntity

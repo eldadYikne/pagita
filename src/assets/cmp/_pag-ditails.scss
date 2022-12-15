@@ -4,10 +4,19 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-position: relative;
+
     @include for-medium-layout {
+        position: relative;
         width: 70%;
 
+    }
+
+    @include for-mobile-only {
+        position: absolute;
+        background-color: #ffff;
+        top: 60px;
+        height: 100vh;
+        padding-top: 30px;
     }
 
     & .tests {
@@ -29,13 +38,15 @@ position: relative;
     h2 {
         margin: 3px;
     }
-    & .add-test-button{
-        button{
-            width: 70px;
-            position: absolute;
-            top: 15px;
-            left: 15px;
-        }
+
+    & .add-test-button {
+        width: 70px;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
     }
 
 }

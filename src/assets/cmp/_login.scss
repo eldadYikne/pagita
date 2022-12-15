@@ -16,22 +16,32 @@
         display: flex;
         align-items: center;
         justify-content: start;
-        // margin-bottom: 20px;
-        // max-width: 350px;
-        // min-width: 350px;
-        // padding: 25px 40px;
         height: 400px;
         width: 300px;
         text-align: center;
         flex-direction: column;
         gap: 150px;
 
+        @include for-mobile-only {
+            width: 100vw;
+            height: 90vh;
+            margin-top: 0px;
+            position: absolute;
+            bottom: 0;
+            box-shadow: none;
+
+            button {
+                height: 50px;
+            }
+        }
+
         & .button-container {
             width: 100%;
 
             & .no {
                 background-color: rgba(0, 128, 0, 0.656);
-                &:hover{
+
+                &:hover {
                     background-color: rgba(0, 128, 0, 0.402);
 
                 }
@@ -39,7 +49,8 @@
 
             & .yes {
                 background-color: rgba(255, 0, 0, 0.686);
-                &:hover{
+
+                &:hover {
                     background-color: rgba(255, 0, 0, 0.42);
 
                 }
@@ -53,7 +64,7 @@
     }
 
     & .login {
-        background:  linear-gradient(110deg, rgba(161, 99, 167, 0.8117647059) 39%, rgba(62, 114, 148, 0.8039215686) 73%);
+        background: linear-gradient(110deg, rgba(161, 99, 167, 0.8117647059) 39%, rgba(62, 114, 148, 0.8039215686) 73%);
 
         margin-top: 100px;
         background-color: #fff;
@@ -62,13 +73,16 @@
         display: flex;
         align-items: center;
         justify-content: start;
-        // margin-bottom: 20px;
-        // max-width: 350px;
-        // min-width: 350px;
-        // padding: 25px 40px;
         height: 400px;
         width: 300px;
         flex-direction: column;
+
+        @include for-mobile-only {
+            width: 100vw;
+            height: 100vh;
+            margin-top: 0px;
+
+        }
 
         & .title {
             margin-top: 15px;
@@ -90,7 +104,8 @@
 
                 }
             }
-            & .message{
+
+            & .message {
                 display: flex;
                 justify-content: center;
                 align-items: center;

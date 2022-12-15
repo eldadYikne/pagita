@@ -3,6 +3,30 @@
         position: absolute;
         right: 0;
         padding: 10px;
+        z-index: 1;
+
+        @include for-medium-layout {
+            display: none;
+        }
+    }
+
+    & .mobile-logo {
+        position: absolute;
+        color: #c278c9;
+        font-weight: 600;
+        font-size: 35px;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 50px;
+
+        }
+
+        &.fff {
+            color: #fff;
+        }
 
         @include for-medium-layout {
             display: none;
@@ -73,7 +97,8 @@
             width: 50%;
             z-index: 30;
             height: 100vh;
-            background-color : #70488c;
+            background-color: #70488c;
+
             &.open {
                 transform: translateX(0);
             }

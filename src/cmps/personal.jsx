@@ -69,7 +69,7 @@ export function Personal() {
                     })}
                 </div>
                 <div className="tests">
-                <h3> : הטיפולים הקרובות שלי</h3>
+                <h3> : הטיפולים הקרובים שלי</h3>
 
                     {pag?.treatments && pag?.treatments.map(treatment => {
                         return <div key={treatment.id} className="test">

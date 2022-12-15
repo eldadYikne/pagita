@@ -16,6 +16,12 @@ export function pagitaReducer(state = INITIAL_STATE, action) {
         case 'REMOVE_TOY':
             pags = state.pags.filter(toy => toy._id !== action.toyId)
             return { ...state, pags: pags }
+        case 'UPDATE_PAG':
+            var pagIdx = state.pags.findIndex(pag => pag._id === action.pag._id)
+            pags=[...state.pags]
+            pags.splice(pagIdx,1,action.pag)
+             console.log('  state.pags',  pags)
+            return { ...state, pags: [...pags] }
         case 'SET_FILTER_BY':
             return { ...state, filterBy: action.filterBy }
         case 'ADD_PAG':
