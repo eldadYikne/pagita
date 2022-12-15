@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c65e398b.css",
+    "main.js": "/static/js/main.f4f75d95.js",
+    "static/media/yehudaclm-light-webfont.ttf": "/static/media/yehudaclm-light-webfont.e144fd248e9e0615a9c7.ttf",
+    "static/media/yehudaclm-bold-webfont.ttf": "/static/media/yehudaclm-bold-webfont.18989ddb715c2a1f72d3.ttf",
+    "static/media/logo2.png": "/static/media/logo2.fb53c0185ccae53c855f.png",
+    "index.html": "/index.html",
+    "main.c65e398b.css.map": "/static/css/main.c65e398b.css.map",
+    "main.f4f75d95.js.map": "/static/js/main.f4f75d95.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c65e398b.css",
+    "static/js/main.f4f75d95.js"
+  ]
+}
