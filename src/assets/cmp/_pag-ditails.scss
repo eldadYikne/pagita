@@ -15,21 +15,148 @@
         position: absolute;
         background-color: #ffff;
         top: 60px;
-        height: 100vh;
+        height: 100%;
         padding-top: 30px;
     }
 
-    & .tests {
-        text-align: center;
+    & .toggle-tests {
+        color: $color4;
+        font-weight: 600;
+        margin-top: 30px;
+        width: 98vw;
+        display: flex;
+        justify-content: end;
+        box-shadow: 0px 0px 4px;
+        cursor: pointer;
+        user-select: none;
+        box-shadow: 0px -5px 8px rgba(0, 0, 0, 0.3);
+        -webkit-transition: height 0.3s ease;
+        transition: height 0.3s ease;
+        align-items: center;
+        height: 69px;
 
         h3 {
-            text-decoration: underline;
+            margin: 2px;
         }
 
-        & .test {
+        @include for-medium-layout {
+            padding-right: 15px;
+            width: 95%;
+        }
+    }
 
-            &>* {
-                padding: 2px;
+    & .tests-container {
+        transition: height 0.3s ease;
+        -webkit-transition: height 0.3s ease;
+        // transform: translateY(0%);
+        user-select: none;
+        // visibility: hidden;
+        width: 98vw;
+        box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
+        transition: height 0.3s ease;
+        height: 0px;
+        overflow: auto;
+        position: relative;
+
+        @include for-medium-layout {
+            width: 95%;
+            padding-right: 15px;
+
+        }
+
+        &.open {
+            // transform: translateY(0%);
+            // visibility: initial;
+            transition: height 0.3s ease;
+            height: fit-content;
+        }
+
+        & .tests {
+            text-align: end;
+            // padding-right: 15px;
+
+            & .title {
+                margin: 0;
+                margin: 5px;
+                color: $color5;
+                font-size: 22px;
+
+            }
+
+            h3 {
+                text-decoration: underline;
+            }
+
+            & .test {
+                font-size: 18px;
+                margin-top: 5px;
+                box-shadow: 1px 1px 0px 0px rgb(0 0 0 / 30%);
+                height: 60px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+
+                &:hover {
+                    background-color: rgb(238, 238, 238);
+                }
+
+                & .test-details-container {
+                    width: 90%;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: row-reverse;
+                    height: 100%;
+
+                    & .name-test {
+                        margin-right: 8px;
+                        font-weight: 600;
+                    }
+
+                    & .date-time {
+                        display: flex;
+                        flex-direction: column-reverse;
+                        align-items: flex-start;
+                        justify-content: space-between;
+                        height: 100%;
+
+                        & .time-test {
+                            margin-bottom: 5px;
+                            -webkit-text-stroke: thin;
+
+                        }
+
+                        & .date-test {
+                            -webkit-text-stroke: thin;
+                        }
+                    }
+
+                    & .line {
+                        background: #c278c9;
+                        border-radius: 2px;
+                        display: inline-flex;
+                        height: 50px;
+                        width: 4px;
+                        position: absolute;
+                        right: 0;
+                        top: 0%;
+
+                        @include for-medium-layout {
+                            width: 4px;
+                            top: 10%;
+
+
+                        }
+
+                    }
+                }
+
+
+
+                &>* {
+                    padding: 2px;
+                }
             }
         }
     }
@@ -47,6 +174,35 @@
         display: flex;
         justify-content: space-between;
         width: 90%;
+
+        & .menu {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 0px;
+            background: rgb(244, 244, 244);
+            text-align: end;
+            padding: 7px;
+            padding-right: 15px;
+            user-select: none;
+
+            & .input-upload {
+                width: 91px;
+                position: absolute;
+                opacity: 0;
+            }
+
+            h3 {
+                margin: 0;
+                width: 100%;
+                margin-top: 10px;
+
+                &:hover {
+                    background: rgba(244, 244, 244, 0.652);
+
+                }
+            }
+        }
     }
 
 }

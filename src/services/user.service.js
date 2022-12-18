@@ -18,20 +18,20 @@ export const userService = {
 
 window.us = userService
 const users = [
-    { username: '0526587480', password: '123456', name: 'אלדד יקנה' ,isAdmin:true},
+    { username: '0526587480', password: '123456', name:'שרון בן דוד' ,isAdmin:true},
     { username: '052123456', password: '654321', name: 'קוהבי גה' },
     { username: '050123456', password: '123789', name: 'טיטי שרלוק' },
 ]
 
 function login(credentials) {
     console.log('credentials', credentials)
+
     const user = users.find(user => {
         if (user.username === credentials.username && user.password === credentials.password) {
             return user
         }
     })
-    storageLoaclService.saveToStorage(STORAGE_KEY_LOGGEDIN,user)
-    console.log('user', user)
+    if(user) storageLoaclService.saveToStorage(STORAGE_KEY_LOGGEDIN,user)
     if (user) {
         return Promise.resolve(user)
     } else {

@@ -1,6 +1,12 @@
 .add-test{
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
+    width: 59vw;
+
+    @include for-mobile-only{
+        width: 98vw;
+    }
     form{
         display: flex;
         flex-direction: column;
@@ -15,5 +21,6 @@
         & .test-date{
             margin-top: 15px;
         }
+        
     }
 }

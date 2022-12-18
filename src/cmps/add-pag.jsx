@@ -28,7 +28,7 @@ export function AddPag({ addPag, setIsAddPag }) {
         }
     }
 
-    const cheackInputs = (ev) => {
+    const checkInputs = (ev) => {
         ev.preventDefault()
         const details = ['gender', 'parentsName', 'weight', 'bornDate', 'id', 'tel']
         const gender = ev.target[2].value
@@ -67,7 +67,7 @@ export function AddPag({ addPag, setIsAddPag }) {
 
     return <div className="add-pag" dir="rtl">
         <h2 className="title">הוספת תינוק</h2>
-        <form onSubmit={cheackInputs} onChange={onChangeHandel}  >
+        <form onSubmit={checkInputs} onChange={onChangeHandel}  >
             <CacheProvider value={cacheRtl}>
                 <ThemeProvider theme={theme}>
                     <TextField className="parentsName" name="parentsName" id="outlined-basic" dir="rtl" label="שם האם" variant="outlined" />
@@ -79,8 +79,8 @@ export function AddPag({ addPag, setIsAddPag }) {
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
                             label="מין"
-                            style={{ width: '98%' }}
-
+                            style={{ width: '98%' ,marginRight:5}}
+                            defaultValue=""
                         >
                             <MenuItem value='male'>זכר</MenuItem>
                             <MenuItem value='female'>נקבה</MenuItem>

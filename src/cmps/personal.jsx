@@ -2,9 +2,10 @@ import userEvent from "@testing-library/user-event";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { importantFacts } from "../const/pagita";
-import { getPagByUsername } from "../store/actions/pagita.action";
+import { getPagByUsername, loadPags } from "../store/actions/pagita.action";
 import { PagDetails } from "./pag-details";
-
+import CribIcon from '@mui/icons-material/Crib';
+import { Link } from "react-router-dom";
 export function Personal() {
 
     const pag = useSelector(state => state.pagitaModule.pag)
@@ -14,7 +15,9 @@ export function Personal() {
     const dispatch = useDispatch()
     useEffect(() => {
         if (user) {
+            dispatch(loadPags())
             dispatch(getPagByUsername())
+
         }
         factsBox()
         return () => {
@@ -30,7 +33,7 @@ export function Personal() {
             if (counter === importantFacts.length) {
                 counter = 1
             }
-        }, 10000)
+        }, 7000)
         setFactInterval(factInterval)
     }
 
@@ -41,45 +44,46 @@ export function Personal() {
     return <div className="personal">
         <div className="great">
             <h1> ברוכים השבים, {user.name} </h1>
-            <h2> ליווי תינוקך בתהליך משפיע רבות על הצלחת התהליך</h2>
+            <h2> ליווי תינוקך משפיע רבות על הצלחת התהליך</h2>
         </div>
 
         <div className="main">
-
-
-            <div className="important-facts">
-                <h2>חשוב לדעת</h2>
-                <p className="fact" >
-                    {fact}
-                </p>
-            </div>
-            <div className="baby-details">
-                <span> נולדתי בתאריך : {pag.bornDate}</span><br />
+        <div className="baby-details">
+                <span> נולדתי בתאריך : {pag.bornDate}</span>
                 <span> תעודת הזהות שלי : {pag.id}</span>
                 <span> המשקל שלי : {pag.weight}</span>
-
-                <div className="tests">
-                    <h3> : הבדיקות הקרובות שלי</h3>
-                    {pag?.tests && pag?.tests.map(test => {
-                        return <div key={test.id} className="test">
-                            <span>{test.name}- </span>
-                            <span>{test.date} בשעה </span>
-                            <span>{test.time}</span>
-                        </div>
-                    })}
-                </div>
-                <div className="tests">
-                <h3> : הטיפולים הקרובים שלי</h3>
-
-                    {pag?.treatments && pag?.treatments.map(treatment => {
-                        return <div key={treatment.id} className="test">
-                            <span>{treatment.name}- </span>
-                            <span>{treatment.date} בשעה </span>
-                            <span>{treatment.time}</span>
-                        </div>
-                    })}
-                </div>
             </div>
+            <div className="my-tests">
+                <Link to={`${pag._id}`}>הבדיקות שלי  </Link>
+            </div>
+            <div className="img-important">
+                <div className="img-container">
+                    <div className="slider">
+                        <div className="slides">
+                            {pag?.pictures && pag?.pictures.map((picture,idx)=>{
+                                return <div id={`slide-${idx+1}`}>
+                                    <h3>{picture.title} </h3>
+                                    <img src={picture.img}/>
+                                </div>
+                            })}
+                           
+                        </div>
+                        {/* <a href="#slide-1">1</a>
+                    <a href="#slide-2">2</a>
+                    <a href="#slide-3">3</a>
+                    <a href="#slide-4">4</a>
+                    <a href="#slide-5">5</a> */}
+                    </div>
+                </div>
+                <div className="important-facts">
+                    <h2 className="title-important"><CribIcon className="icon" fontSize="35" /> חשוב לדעת</h2>
+                    <p className="fact" >
+                        {fact}
+                    </p>
+                </div>
+
+            </div>
+           
 
         </div>
     </div>

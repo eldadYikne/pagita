@@ -7,19 +7,19 @@ import { userService } from "../../services/user.service"
 
 export function logIn(ev) {
     return (dispatch) => {
-       const {username,password}=ev
+        const { username, password } = ev
 
 
         if (!username || !password) {
             dispatch({ type: 'MSG', msg: ' פרטי ההתחברות שגויים ' })
             Promise.reject('invalid user')
-        } 
+        }
         userService.login({ username, password })
             .then(user => {
+                console.log('userAction', user)
                 dispatch({ type: 'MSG', msg: null })
                 dispatch({ type: 'USER_LOGIN', user: user })
-                console.log('userrrrr', user)
-
+                return user
             })
             .catch(err => {
                 dispatch({ type: 'MSG', msg: ' פרטי ההתחברות שגויים ' })

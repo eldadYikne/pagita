@@ -13,7 +13,6 @@ export const storageService = {
 
 function query(entityType, filterBy, delay = 0) {
     var entities = storageLoaclService.loadFromStorage(entityType)
- console.log('entities',entities)
  
     return new Promise((resolve, reject) => {
         setTimeout(() => {

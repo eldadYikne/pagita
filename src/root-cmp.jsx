@@ -9,6 +9,7 @@ import { Informetion } from './cmps/informetion';
 import { Login } from './cmps/login';
 import { PagDetails } from './cmps/pag-details';
 import { Personal } from './cmps/personal';
+import { PersonalDetails } from './cmps/personal-details';
 
 function App() {
   const user = useSelector(state => state.userReducer.user)
@@ -22,6 +23,7 @@ function App() {
         <Route path=':pagId' element={<PagDetails />} />
       </Route >}
       <Route path='personal' element={<Personal />} />
+      <Route path='personal/:babyId' element={<PersonalDetails />} />
 
     </Routes>
 

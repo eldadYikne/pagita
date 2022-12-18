@@ -4,6 +4,7 @@
         right: 0;
         padding: 10px;
         z-index: 1;
+        cursor: pointer;
 
         @include for-medium-layout {
             display: none;
@@ -44,10 +45,9 @@
     }
 
     & .background {
-        height: 100vh;
+        height: 100%;
         position: absolute;
         background-color: black;
-        height: 100vh;
         position: absolute;
         top: 0;
         width: 100vw;
@@ -90,25 +90,32 @@
             flex-direction: column;
             height: calc(100vh - 52px);
             position: fixed;
-            right: 0;
-            -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+            // -webkit-transform: translateX(100%);
+            // transform: translateX(100%);
             transition: all .5s;
             width: 50%;
             z-index: 30;
-            height: 100vh;
+            height: 100%;
             background-color: #70488c;
-
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+            // display: none;
+            position: absolute;
+            transition: 0.8s;
+            visibility: hidden;
+            right: -300px ;
+ 
             &.open {
-                transform: translateX(0);
+                // transform: translateX(0%);
+                // transition: all .5s;
+                visibility: initial;
+                right: 0px ;
+                transition: all 0.3s ease-out 0s;
+
             }
         }
 
-        @include for-mobile-only {
-            position: absolute;
-            right: 0;
-        }
-
+        
         @include for-medium-layout {
             img {
                 display: block;

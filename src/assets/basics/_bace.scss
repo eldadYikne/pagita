@@ -1,18 +1,21 @@
 body {
     font-family: Yehuda;
     margin: auto;
-    overflow-x: hidden;
+
 }
 
-.App{
+.App {
     height: 100vh;
-    overflow-x: hidden;
 }
+
 a {
     text-decoration: none;
     color: unset;
 }
-
+.overflow-x-hidden{
+    overflow-x: hidden;
+    position: relative
+}
 
 button {
     background-color: $color3;
@@ -21,8 +24,9 @@ button {
     padding: 5px;
     border: none;
     height: 30px;
-    &:hover{
-        background-color: #3e7294db;;
+
+    &:hover {
+        background-color: #3e7294db;
 
     }
 }
@@ -30,9 +34,9 @@ button {
 @font-face {
     font-family: Yehuda;
     src: url('../fonts/yehudaclm-light-webfont.ttf');
-  }
+}
 
 @font-face {
     font-family: Yehuda-bold;
     src: url('../fonts/yehudaclm-bold-webfont.ttf');
-  }
+}

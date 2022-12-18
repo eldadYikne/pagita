@@ -31,7 +31,7 @@ export function getPagByUsername() {
     return async (dispatch, getState) => {
         try {
             const user = getState().userReducer.user
-
+            if (!user) return
             const currPag = await pagitaService.getByUsername(user.username)
             console.log('currPag', currPag);
             dispatch({ type: 'SET_PAG', pag: currPag })
@@ -55,15 +55,13 @@ export function removePagFromState() {
 export function savePag(pag) {
     return async (dispatch) => {
         try {
-            console.log('pag',pag)
+            console.log('pag', pag)
             const newPag = await pagitaService.save(pag)
-            if(!pag._id){
+            if (!pag._id) {
                 dispatch({ type: 'ADD_PAG', pag: newPag })
-            }else{
+            } else {
                 dispatch({ type: 'UPDATE_PAG', pag: newPag })
-
             }
-
         } catch (err) {
             console.log("Can't save baby ")
         }

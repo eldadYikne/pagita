@@ -1,0 +1,124 @@
+.tests-container-personal {
+    position: relative;
+    z-index: -1;
+
+    @include for-medium-layout {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 95%;
+        margin: auto;
+    }
+
+    & .personal-head {
+        background: linear-gradient(110deg, rgba(161, 99, 167, 0.8117647059) 39%, rgba(62, 114, 148, 0.8039215686) 73%);
+        height: 60px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        @include for-medium-layout {
+            display: none;
+        }
+    }
+
+    padding-top: 60px;
+
+
+
+   
+
+    & .tests {
+        text-align: end;
+        // padding-right: 15px;
+
+        & .title {
+            margin: 0;
+            margin: 20px 10px 20px 0px;
+            color: $color5;
+            font-size: 22px;
+        }
+
+        h3 {
+            text-decoration: underline;
+        }
+
+        & .test {
+            font-size: 18px;
+            margin-top: 5px;
+            box-shadow: 1px 1px 0px 0px rgb(0 0 0 / 30%);
+            height: 60px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            background-color: white;
+
+            &.gray {
+                background-color: #bebebe2e;
+
+            }
+
+            &:hover {
+                background-color: rgba(220, 220, 220, 0.192);
+            }
+
+            & .test-details-container {
+                width: 90%;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row-reverse;
+                height: 100%;
+
+                & .name-test {
+                    margin-right: 8px;
+                    font-weight: 600;
+                }
+
+                & .date-time {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    height: 100%;
+
+                    & .time-test {
+                        margin-bottom: 5px;
+                        -webkit-text-stroke: thin;
+
+                    }
+
+                    & .date-test {
+                        -webkit-text-stroke: thin;
+                    }
+                }
+
+                & .line {
+                    background: #c278c9;
+                    border-radius: 2px;
+                    display: inline-flex;
+                    height: 50px;
+                    width: 4px;
+                    position: absolute;
+                    right: 0;
+                    top: 0%;
+
+                    @include for-medium-layout {
+                        width: 4px;
+                        top: 10%;
+
+
+                    }
+
+                }
+            }
+
+
+
+            &>* {
+                padding: 2px;
+            }
+        }
+    }
+}

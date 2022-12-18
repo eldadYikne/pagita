@@ -11,7 +11,7 @@ import { logIn, logOut } from "../store/actions/user.action";
 import { useNavigate } from "react-router-dom";
 import DoDisturbOnIcon from '@mui/icons-material/DoDisturbOn';
 import { userService } from "../services/user.service";
-import { removePagFromState } from "../store/actions/pagita.action";
+import { getPagByUsername, removePagFromState } from "../store/actions/pagita.action";
 
 export function Login() {
     const user = useSelector(state => state.userReducer.user)
@@ -42,13 +42,13 @@ export function Login() {
         setValues({ ...values, [prop]: event.target.value });
     };
 
-    const onLogin = async (ev) => {
+    const onLogin = (ev) => {
         ev.preventDefault()
         dispatch(logIn(values))
-        if (!message) navigate('/')
-
-
-
+        const { username, password } = values
+        if (!username || !password) return
+        dispatch(getPagByUsername())
+        navigate('/')
 
 
     }

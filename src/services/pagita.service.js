@@ -2,6 +2,7 @@ import { httpService } from "./httpService"
 import { utilService } from "./util.service"
 import { storageService } from "./async-storage.service"
 import { json } from "react-router-dom"
+import { storageLoaclService } from "./storage.service"
 export const pagitaService = {
   getById,
   remove,
@@ -25,10 +26,12 @@ const gPags =  [
 ]
 
 function query(filterBy) {
-  localStorage.setItem(BASE_URL,JSON.stringify (gPags))
+ const pags= storageLoaclService.loadFromStorage(BASE_URL) ||gPags
+  localStorage.setItem(BASE_URL,JSON.stringify(pags))
   return storageService.query(BASE_URL, { params: filterBy }).then((res) => res)
 
 }
+
 function createNewBaby(_id, parentsName, weight,gender,bornDate,tel) {
   return {
     _id,
@@ -38,8 +41,8 @@ function createNewBaby(_id, parentsName, weight,gender,bornDate,tel) {
     gender,
     tel,
     bornDate,
-    tests: [{ id:utilService.makeId() ,date: '15/12/23', time: '12:00', name: 'בדיקת דם' }],
-    treatments: [{  id:utilService.makeId(),date: '12/12/23', time: '16:00', name: 'קנגרו' }],
+    tests: [{ id:utilService.makeId() ,date: '15-12-23', time: '12:00', name: 'בדיקת דם' }],
+    treatments: [{  id:utilService.makeId(),date: '12-12-23', time: '16:00', name: 'קנגרו' }],
   }
 }
 

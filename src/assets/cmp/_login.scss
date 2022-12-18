@@ -3,7 +3,7 @@
     background-color: #fbfbfb;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     padding: 0 15px;
     position: relative;
     gap: 15px;
@@ -79,7 +79,7 @@
 
         @include for-mobile-only {
             width: 100vw;
-            height: 100vh;
+            height: 100%;
             margin-top: 0px;
 
         }
@@ -111,7 +111,7 @@
                 align-items: center;
                 text-align: center;
                 font-weight: 700;
-                color: palevioletred;
+                color: #ffff;
                 gap: 10px;
             }
         }
