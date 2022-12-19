@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.ebd24a8c.css",
-    "main.js": "/static/js/main.38bf824a.js",
-    "static/media/yehudaclm-light-webfont.ttf": "/static/media/yehudaclm-light-webfont.e144fd248e9e0615a9c7.ttf",
-    "static/media/yehudaclm-bold-webfont.ttf": "/static/media/yehudaclm-bold-webfont.18989ddb715c2a1f72d3.ttf",
-    "static/media/logo2.png": "/static/media/logo2.fb53c0185ccae53c855f.png",
-    "index.html": "/index.html",
-    "main.ebd24a8c.css.map": "/static/css/main.ebd24a8c.css.map",
-    "main.38bf824a.js.map": "/static/js/main.38bf824a.js.map"
+    "main.css": "/pagita/static/css/main.ab8edddb.css",
+    "main.js": "/pagita/static/js/main.cb3171c2.js",
+    "static/media/yehudaclm-light-webfont.ttf": "/pagita/static/media/yehudaclm-light-webfont.e144fd248e9e0615a9c7.ttf",
+    "static/media/yehudaclm-bold-webfont.ttf": "/pagita/static/media/yehudaclm-bold-webfont.18989ddb715c2a1f72d3.ttf",
+    "static/media/logo2.png": "/pagita/static/media/logo2.fb53c0185ccae53c855f.png",
+    "index.html": "/pagita/index.html",
+    "main.ab8edddb.css.map": "/pagita/static/css/main.ab8edddb.css.map",
+    "main.cb3171c2.js.map": "/pagita/static/js/main.cb3171c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.ebd24a8c.css",
-    "static/js/main.38bf824a.js"
+    "static/css/main.ab8edddb.css",
+    "static/js/main.cb3171c2.js"
   ]
 }
