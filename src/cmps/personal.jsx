@@ -61,7 +61,7 @@ export function Personal() {
                     <div className="slider">
                         <div className="slides">
                             {pag?.pictures && pag?.pictures.map((picture,idx)=>{
-                                return <div id={`slide-${idx+1}`}>
+                                return <div key={idx} id={`slide-${idx+1}`}>
                                     <h3>{picture.title} </h3>
                                     <img src={picture.img}/>
                                 </div>
